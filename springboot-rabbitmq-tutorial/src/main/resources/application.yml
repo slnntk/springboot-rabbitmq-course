@@ -8,7 +8,11 @@ spring:
 rabbitmq:
     queue:
         name: queue_slnntk_demo
+        json:
+          name: queue_json_slnntk_demo
     exchange:
         name: exchange_slnntk_demo
     routing:
         key: routing_key_slnntk_demo
+        json:
+            key: routing_json_key_slnntk_demo
