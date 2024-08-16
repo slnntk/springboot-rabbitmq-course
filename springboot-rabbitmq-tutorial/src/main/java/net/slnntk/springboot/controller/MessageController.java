@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/v1/message")
+@RequestMapping("/api/v1")
 @RequiredArgsConstructor
 public class MessageController {
 
@@ -19,7 +19,7 @@ public class MessageController {
     @GetMapping("/publish")
     public ResponseEntity<String> sendMessage(@RequestParam("message") String  message) {
         rabbitMQProducer.sendMessage(message);
-        return ResponseEntity.ok("Message sent: " + message);
+               return ResponseEntity.ok("Message sent to RabbitMQ ");
     }
 
 }
